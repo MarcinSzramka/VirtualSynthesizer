@@ -1,0 +1,9 @@
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\bin\Debug\VirtualSynth.exe.config
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\bin\Debug\VirtualSynth.exe
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\bin\Debug\VirtualSynth.pdb
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\obj\Debug\VirtualSynth.csprojAssemblyReference.cache
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\obj\Debug\VirtualSynth.MainInterface.resources
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\obj\Debug\VirtualSynth.Properties.Resources.resources
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\obj\Debug\VirtualSynth.csproj.GenerateResource.cache
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\obj\Debug\VirtualSynth.exe
+C:\Users\ThinkPad T430\source\repos\VirtualSynth\VirtualSynth\obj\Debug\VirtualSynth.pdb
