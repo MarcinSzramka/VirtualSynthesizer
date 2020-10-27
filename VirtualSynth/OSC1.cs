@@ -71,7 +71,7 @@ namespace VirtualSynth
         {
             Button button = (Button)sender;
             this.WaveForm = (WaveForm)Enum.Parse(typeof(WaveForm), button.Text);
-            //MessageBox.Show($"chuj" + this.WaveForm);
+            
             foreach (Button otherButtons in this.Controls.OfType<Button>())
             {
                 otherButtons.BackColor = Color.Black;

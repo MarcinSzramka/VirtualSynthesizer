@@ -26,10 +26,12 @@ namespace VirtualSynth
 
         private void MainInterface_KeyDown(object sender, KeyEventArgs e)
         {
+            IEnumerable<OSC> oscillators = this.Controls.OfType<OSC>();
             Random rnd = new Random();
             short[] wave = new short[sampleRate];
             byte[] binaryWave = new byte[sampleRate * sizeof(short) ];
             float freq;
+            int OscCount = oscillators.Count();
         //Keys
             switch(e.KeyCode)
             {
@@ -59,7 +61,7 @@ namespace VirtualSynth
             }
 
          // WaveForms
-            foreach (OSC oscillator in this.Controls.OfType<OSC>())
+            foreach (OSC oscillator in oscillators)
             {
                 short tempSample;
                 int samplesPerWaveLength = (int)(sampleRate / freq);
@@ -69,14 +71,14 @@ namespace VirtualSynth
                     case WaveForm.Sine:
                       for (int i = 0; i < sampleRate; i++)
                       {
-                            wave[i] = Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i));
+                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i) / OscCount);
                       }
                       break;
 
                     case WaveForm.Square:
                       for (int i = 0; i < sampleRate; i++)
                       {
-                          wave[i] = Convert.ToInt16(short.MaxValue * Math.Sign(Math.Sin((Math.PI * 2 * freq) / sampleRate * i)));
+                          wave[i] += Convert.ToInt16((short.MaxValue * Math.Sign(Math.Sin((Math.PI * 2 * freq) / sampleRate * i))) / OscCount);
                       }
                       break;
                     case WaveForm.Saw:
@@ -89,7 +91,7 @@ namespace VirtualSynth
                             for (int i = 0; i < samplesPerWaveLength && j<sampleRate; i++)
                             {
                                 tempSample += ampStep;
-                                wave[j++] = Convert.ToInt16(tempSample);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
                             }
                         }
                         break;
@@ -103,14 +105,14 @@ namespace VirtualSynth
                                 ampStep = (short)-ampStep;
                             }
                             tempSample += ampStep;
-                            wave[i] = Convert.ToInt16(tempSample);
+                            wave[i] += Convert.ToInt16(tempSample / OscCount);
 
                         }
                         break;
                     case WaveForm.Noise:
                         for (int i = 0; i < sampleRate; i++)
-                        {
-                            wave[i] = (short)rnd.Next(-short.MaxValue, short.MaxValue);
+                        {  
+                            wave[i] += Convert.ToInt16((short)rnd.Next(-short.MaxValue, short.MaxValue) / OscCount) ;
                         }
                         break;
 
