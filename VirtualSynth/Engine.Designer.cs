@@ -1,6 +1,6 @@
 ﻿namespace VirtualSynth
 {
-    partial class MainInterface
+    partial class Engine
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -28,39 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.osc1 = new VirtualSynth.OSC();
-            this.osc2 = new VirtualSynth.OSC();
             this.osc3 = new VirtualSynth.OSC();
+            this.osc2 = new VirtualSynth.OSC();
+            this.osc1 = new VirtualSynth.OSC();
             this.SuspendLayout();
             // 
-            // osc1
+            // osc3
             // 
-            this.osc1.Location = new System.Drawing.Point(12, 12);
-            this.osc1.Name = "osc1";
-            this.osc1.Size = new System.Drawing.Size(412, 101);
-            this.osc1.TabIndex = 0;
-            this.osc1.TabStop = false;
-            this.osc1.Text = "osc1";
+            this.osc3.Location = new System.Drawing.Point(12, 230);
+            this.osc3.Name = "osc3";
+            this.osc3.Size = new System.Drawing.Size(776, 100);
+            this.osc3.TabIndex = 2;
+            this.osc3.TabStop = false;
+            this.osc3.Text = "osc3";
             // 
             // osc2
             // 
             this.osc2.Location = new System.Drawing.Point(12, 119);
             this.osc2.Name = "osc2";
-            this.osc2.Size = new System.Drawing.Size(412, 127);
+            this.osc2.Size = new System.Drawing.Size(776, 105);
             this.osc2.TabIndex = 1;
             this.osc2.TabStop = false;
             this.osc2.Text = "osc2";
             // 
-            // osc3
+            // osc1
             // 
-            this.osc3.Location = new System.Drawing.Point(12, 252);
-            this.osc3.Name = "osc3";
-            this.osc3.Size = new System.Drawing.Size(412, 100);
-            this.osc3.TabIndex = 2;
-            this.osc3.TabStop = false;
-            this.osc3.Text = "osc3";
+            this.osc1.Location = new System.Drawing.Point(12, 12);
+            this.osc1.Name = "osc1";
+            this.osc1.Size = new System.Drawing.Size(776, 101);
+            this.osc1.TabIndex = 0;
+            this.osc1.TabStop = false;
+            this.osc1.Text = "osc1";
+            this.osc1.Enter += new System.EventHandler(this.osc1_Enter);
             // 
-            // MainInterface
+            // Engine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -69,7 +70,7 @@
             this.Controls.Add(this.osc2);
             this.Controls.Add(this.osc1);
             this.KeyPreview = true;
-            this.Name = "MainInterface";
+            this.Name = "Engine";
             this.Text = "Virtual Synthesizer";
             this.Load += new System.EventHandler(this.MainInterface_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainInterface_KeyDown);
