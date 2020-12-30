@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.IO;
+
 namespace VirtualSynth
 {
     public class OSC : GroupBox
@@ -100,6 +101,7 @@ namespace VirtualSynth
                 Text = "BudX6",
                 Size = new Size(40, 30),
             });
+
             this.Controls.Add(new Button()
             {
                 Name = "BudX7",
@@ -108,6 +110,17 @@ namespace VirtualSynth
                 Size = new Size(40, 30),
             });
 
+            this.Controls.Add(new TrackBar()
+            {
+                Name = "Volume",
+                Location = new Point(660, 15),
+                Size = new Size(110, 50),
+                Maximum = 100,
+                Minimum = 0,
+                Value = 80,
+
+            }); ;
+
             foreach (Control control in this.Controls)
             {
                 control.Size = new Size(50, 30);
@@ -115,6 +128,7 @@ namespace VirtualSynth
                 control.Click += WaveButton_Click;
             }
 
+            
 
             this.Controls.Add(new CheckBox()
             {
@@ -124,23 +138,31 @@ namespace VirtualSynth
                 Text = "On",
                 Checked = true,
             });
+
+            
             this.Controls.Add(new TrackBar()
             {
-                Name = "Volume",
-                Location = new Point(660, 15),
+                Name = "semiTones",
+                Location = new Point(15,50),
                 Size = new Size(110, 50),
-
+                Maximum = 99,
+                Minimum = -99,
             });
-            this.Controls.Add(new ListBox()
+            this.Controls.Add(new Label()
             {
-                Name = "Octave",
-                Location = new Point(15,30),
-
+                Location = new Point(135, 50),
+                Name = "label",
+                Text = Volume.ToString(),
             });
         }
         public WaveForm WaveForm { get ;private set; }
+        public TrackBars TrackBars  { get; set; }
         public bool On => ((CheckBox)this.Controls["OscOn"]).Checked;
+        public int Volume => ((TrackBar)this.Controls["Volume"]).Value;
+        
 
+
+        //public int semitones => ((TrackBar)this.Controls["semiTones"]).Value;
         private void WaveButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
