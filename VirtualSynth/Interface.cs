@@ -110,16 +110,29 @@ namespace VirtualSynth
                 Size = new Size(40, 30),
             });
 
-            this.Controls.Add(new TrackBar()
+            this.Controls.Add(new Button()
             {
-                Name = "Volume",
-                Location = new Point(660, 15),
-                Size = new Size(110, 50),
-                Maximum = 100,
-                Minimum = 0,
-                Value = 80,
+                Name = "BudX8",
+                Location = new Point(610, 15),
+                Text = "BudX8",
+                Size = new Size(40, 30),
+            });
 
-            }); ;
+            this.Controls.Add(new Button()
+            {
+                Name = "BudX9",
+                Location = new Point(660, 15),
+                Text = "BudX9",
+                Size = new Size(40, 30),
+            });
+
+            this.Controls.Add(new Button()
+            {
+                Name = "BudX10",
+                Location = new Point(710, 15),
+                Text = "BudX10",
+                Size = new Size(40, 30),
+            });
 
             foreach (Control control in this.Controls)
             {
@@ -128,12 +141,22 @@ namespace VirtualSynth
                 control.Click += WaveButton_Click;
             }
 
-            
+            this.Controls.Add(new TrackBar()
+            {
+                Name = "Volume",
+                Location = new Point(660, 50),
+                Size = new Size(110, 50),
+                Maximum = 100,
+                Minimum = 0,
+                Value = 80,
+
+            }); ;
+
 
             this.Controls.Add(new CheckBox()
             {
                 Name = "OscOn",
-                Location = new Point(625, 15),
+                Location = new Point(625, 50),
                 Size = new Size(40, 30),
                 Text = "On",
                 Checked = true,
@@ -143,14 +166,14 @@ namespace VirtualSynth
             this.Controls.Add(new TrackBar()
             {
                 Name = "semiTones",
-                Location = new Point(15,50),
+                Location = new Point(820,50),
                 Size = new Size(110, 50),
                 Maximum = 99,
                 Minimum = -99,
             });
             this.Controls.Add(new Label()
             {
-                Location = new Point(135, 50),
+                Location = new Point(775, 50),
                 Name = "label",
                 Text = Volume.ToString(),
             });

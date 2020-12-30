@@ -378,6 +378,81 @@ namespace VirtualSynth
 
                         }
                         break;
+
+                    case WaveForm.BudX8:
+
+
+                        for (int i = 0; i < sampleRate; i++)
+                        {
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) < 0)
+                            {
+                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5*(Math.PI * 2 * freq) / sampleRate * i) / OscCount);
+                            }
+                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(0.5*(Math.PI * 2 * freq) / sampleRate * i) / OscCount);
+                        }
+                       
+                        break;
+
+                    case WaveForm.BudX9:
+
+
+                        for (int i = 0; i < sampleRate; i++)
+                        {
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) >= 0)
+                            {
+                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5 * (Math.PI * 2 * freq) / sampleRate * i) / OscCount);
+                            }
+                            wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin(0.5 * (Math.PI * 2 * freq) / sampleRate * i) / OscCount);
+                        }
+                        
+                        break;
+
+                    case WaveForm.BudX10:
+
+
+                        for (int j = 0; j < sampleRate; j++)
+                        {
+                            tempSample = short.MaxValue;
+                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            {
+                                tempSample -= (short)(ampStep*12);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
+                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            {
+                                tempSample += (short)(ampStep *6);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
+
+                           
+                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            {
+                                tempSample -= (short)(6*ampStep);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
+                            
+                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            {
+                                tempSample += (short)(ampStep *12);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
+
+                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            {
+                                tempSample -= (short)(12 * ampStep);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
+
+                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            {
+                                tempSample += (short)(ampStep * 6);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
+
+
+                        }
+                        break;
+
                 }
         //TODO możliwość zrobienia obwiedni na masterze
 
@@ -423,7 +498,7 @@ namespace VirtualSynth
     }
     public enum WaveForm
     {
-        Sine, Square, Saw, Triangle, Noise, BudX, BudX2, BudX3, BudX4, BudX5, BudX6, BudX7
+        Sine, Square, Saw, Triangle, Noise, BudX, BudX2, BudX3, BudX4, BudX5, BudX6, BudX7, BudX8, BudX9, BudX10
     }
     public enum TrackBars
     {
