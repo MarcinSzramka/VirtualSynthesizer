@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.osc5 = new VirtualSynth.OSC();
+            this.osc4 = new VirtualSynth.OSC();
             this.osc3 = new VirtualSynth.OSC();
             this.osc2 = new VirtualSynth.OSC();
             this.osc1 = new VirtualSynth.OSC();
-            this.osc4 = new VirtualSynth.OSC();
-            this.osc5 = new VirtualSynth.OSC();
             this.SuspendLayout();
+            // 
+            // osc5
+            // 
+            this.osc5.Location = new System.Drawing.Point(12, 385);
+            this.osc5.Name = "osc5";
+            this.osc5.Size = new System.Drawing.Size(1025, 86);
+            this.osc5.TabIndex = 4;
+            this.osc5.TabStop = false;
+            this.osc5.Text = "osc5";
+            this.osc5.TrackBars = VirtualSynth.TrackBars.Volume;
+            // 
+            // osc4
+            // 
+            this.osc4.Location = new System.Drawing.Point(12, 293);
+            this.osc4.Name = "osc4";
+            this.osc4.Size = new System.Drawing.Size(1025, 86);
+            this.osc4.TabIndex = 3;
+            this.osc4.TabStop = false;
+            this.osc4.Text = "osc4";
+            this.osc4.TrackBars = VirtualSynth.TrackBars.Volume;
             // 
             // osc3
             // 
@@ -65,26 +85,6 @@
             this.osc1.Text = "osc1";
             this.osc1.TrackBars = VirtualSynth.TrackBars.Volume;
             this.osc1.Enter += new System.EventHandler(this.osc1_Enter);
-            // 
-            // osc4
-            // 
-            this.osc4.Location = new System.Drawing.Point(12, 293);
-            this.osc4.Name = "osc4";
-            this.osc4.Size = new System.Drawing.Size(1025, 86);
-            this.osc4.TabIndex = 3;
-            this.osc4.TabStop = false;
-            this.osc4.Text = "osc4";
-            this.osc4.TrackBars = VirtualSynth.TrackBars.Volume;
-            // 
-            // osc5
-            // 
-            this.osc5.Location = new System.Drawing.Point(12, 385);
-            this.osc5.Name = "osc5";
-            this.osc5.Size = new System.Drawing.Size(1025, 86);
-            this.osc5.TabIndex = 4;
-            this.osc5.TabStop = false;
-            this.osc5.Text = "osc5";
-            this.osc5.TrackBars = VirtualSynth.TrackBars.Volume;
             // 
             // Engine
             // 

@@ -134,6 +134,8 @@ namespace VirtualSynth
                 Size = new Size(40, 30),
             });
 
+            
+
             foreach (Control control in this.Controls)
             {
                 control.Size = new Size(50, 30);
@@ -141,42 +143,96 @@ namespace VirtualSynth
                 control.Click += WaveButton_Click;
             }
 
+        // Nowy foreach dla trackbarów
             this.Controls.Add(new TrackBar()
             {
                 Name = "Volume",
-                Location = new Point(660, 50),
-                Size = new Size(110, 50),
+                Location = new Point(60, 50),
+                Size = new Size(110, 40),
                 Maximum = 100,
                 Minimum = 0,
                 Value = 80,
 
             }); ;
 
+            
+            this.Controls.Add(new Label()
+            {
+                Location = new Point(170, 50),
+                Name = "label",
+                Text = "Volume",
+                Size = new Size(50,40),
+            });
+            this.Controls.Add(new TrackBar()
+            {
+                Name = "semiTones",
+                Location = new Point(240, 50),
+                Size = new Size(110, 40),
+                Maximum = 99,
+                Minimum = -99,
+            });
+            this.Controls.Add(new Label()
+            {
+                Location = new Point(350, 50),
+                Size = new Size(65, 40),
+                Name = "label2",
+                Text = "Semitones",
+            });
+
+            this.Controls.Add(new TrackBar()
+            {
+                Name = "Attack",
+                Location = new Point(460, 50),
+                Size = new Size(110, 40),
+                Maximum = 99,
+                Minimum = 0,
+            });
+            this.Controls.Add(new Label()
+            {
+                Location = new Point(570, 50),
+                Size = new Size(65, 40),
+                Name = "label3",
+                Text = "Attack",
+            });
+
+            this.Controls.Add(new TrackBar()
+            {
+                Name = "Decay",
+                Location = new Point(640, 50),
+                Size = new Size(110, 40),
+                Maximum = 99,
+                Minimum = 0,
+            });
+            this.Controls.Add(new Label()
+            {
+                Location = new Point(750, 50),
+                Size = new Size(65, 40),
+                Name = "label4",
+                Text = "Decay",
+            });
+            foreach (Control controltb in this.Controls)
+            {
+
+                //controltb.Font = new Font("Arial", 6);
+                // controltb.Click += TrackBar_Click;
+        
+            }
+
+
+
+
 
             this.Controls.Add(new CheckBox()
             {
                 Name = "OscOn",
-                Location = new Point(625, 50),
+                Location = new Point(10, 50),
                 Size = new Size(40, 30),
                 Text = "On",
                 Checked = true,
             });
 
             
-            this.Controls.Add(new TrackBar()
-            {
-                Name = "semiTones",
-                Location = new Point(820,50),
-                Size = new Size(110, 50),
-                Maximum = 99,
-                Minimum = -99,
-            });
-            this.Controls.Add(new Label()
-            {
-                Location = new Point(775, 50),
-                Name = "label",
-                Text = Volume.ToString(),
-            });
+           
         }
         public WaveForm WaveForm { get ;private set; }
         public TrackBars TrackBars  { get; set; }
@@ -188,6 +244,7 @@ namespace VirtualSynth
         //public int semitones => ((TrackBar)this.Controls["semiTones"]).Value;
         private void WaveButton_Click(object sender, EventArgs e)
         {
+
             Button button = (Button)sender;
             this.WaveForm = (WaveForm)Enum.Parse(typeof(WaveForm), button.Text);
             
@@ -197,7 +254,13 @@ namespace VirtualSynth
             }
             button.BackColor = Color.Yellow;
         }
+        //TODO
+        //private void TrackBar_Click(object sender, EventArgs e)
+        //     {
+        //    TrackBar Volume = (TrackBar)sender;
 
+
+        //     }
         }
 
 }

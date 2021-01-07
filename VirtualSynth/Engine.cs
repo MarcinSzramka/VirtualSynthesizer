@@ -18,10 +18,13 @@ namespace VirtualSynth
     {
         public const int sampleRate = 41000;
         public const short bitsPerSample = 16;
+        public delegate int Delegat();
         //TODO
-      // public int volume => ((TrackBar)this.Controls["Volume"]).Value;
-       
+        // public int volume => ((TrackBar)this.Controls["Volume"]).Value;
+        
+        //TODO
         public int semitones => ((TrackBar)this.Controls["semiTones"]).Value;
+
         public Engine()
         {
             InitializeComponent();
@@ -38,6 +41,7 @@ namespace VirtualSynth
             byte[] binaryWave = new byte[sampleRate * sizeof(short)];
             float freq;
             int OscCount = oscillators.Count();
+
 
 
             //Keys
@@ -415,41 +419,49 @@ namespace VirtualSynth
                             tempSample = short.MaxValue;
                             for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
                             {
-                                tempSample -= (short)(ampStep*12);
-                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
-                            }
-                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
-                            {
-                                tempSample += (short)(ampStep *6);
+                                tempSample -= (short)(ampStep*3);
                                 wave[j++] += Convert.ToInt16(tempSample / OscCount);
                             }
 
+                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            {
+                                tempSample += (short)(ampStep );
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
                            
                             for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
                             {
-                                tempSample -= (short)(6*ampStep);
+                                tempSample -= (short)(ampStep);
                                 wave[j++] += Convert.ToInt16(tempSample / OscCount);
                             }
                             
                             for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
                             {
-                                tempSample += (short)(ampStep *12);
+                                tempSample += (short)(ampStep *3);
                                 wave[j++] += Convert.ToInt16(tempSample / OscCount);
                             }
 
                             for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
                             {
-                                tempSample -= (short)(12 * ampStep);
+                                tempSample -= (short)(3 * ampStep);
                                 wave[j++] += Convert.ToInt16(tempSample / OscCount);
                             }
 
-                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLength / 18 && j < sampleRate; i++)
                             {
-                                tempSample += (short)(ampStep * 6);
+                                tempSample += (short)(2 * ampStep);
                                 wave[j++] += Convert.ToInt16(tempSample / OscCount);
                             }
-
-
+                            for (int i = 0; i < samplesPerWaveLength / 18 && j < sampleRate; i++)
+                            {
+                                tempSample -= (short)(2 * ampStep);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
+                            for (int i = 0; i < samplesPerWaveLength / 18 && j < sampleRate; i++)
+                            {
+                                tempSample += (short)(3 * ampStep);
+                                wave[j++] += Convert.ToInt16(tempSample / OscCount);
+                            }
                         }
                         break;
 
