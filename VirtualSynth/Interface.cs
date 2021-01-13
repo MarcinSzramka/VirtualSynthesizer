@@ -154,85 +154,6 @@ namespace VirtualSynth
 
 
             });
-            //// Nowy foreach dla trackbarów
-            //this.Controls.Add(new TrackBar()
-            //{
-            //    Name = "Volume",
-            //    Location = new Point(60, 50),
-            //    Size = new Size(110, 40),
-            //    Maximum = 100,
-            //    Minimum = 0,
-            //    Value = 1,
-            //    TickFrequency = 1,
-
-
-            //}); ;
-
-            //this.Controls.Add(new Label()
-            //{
-            //    Location = new Point(170, 50),
-            //    Name = "label",
-            //    Text =  Volume.ToString(),
-            //    Size = new Size(50,40),
-            //});
-            //this.Controls.Add(new TrackBar()
-            //{
-            //    Name = "semiTones",
-            //    Location = new Point(240, 50),
-            //    Size = new Size(110, 40),
-            //    Maximum = 99,
-            //    Minimum = -99,
-            //});
-            //this.Controls.Add(new Label()
-            //{
-            //    Location = new Point(350, 50),
-            //    Size = new Size(65, 40),
-            //    Name = "label2",
-            //    Text = "Semitones",
-            //});
-
-            //this.Controls.Add(new TrackBar()
-            //{
-            //    Name = "Attack",
-            //    Location = new Point(460, 50),
-            //    Size = new Size(110, 40),
-            //    Maximum = 99,
-            //    Minimum = 0,
-            //    TickFrequency = 1,
-            //});
-            //this.Controls.Add(new Label()
-            //{
-            //    Location = new Point(570, 50),
-            //    Size = new Size(65, 40),
-            //    Name = "label3",
-            //    Text = "Attack",
-            //});
-
-            //this.Controls.Add(new TrackBar()
-            //{
-            //    Name = "Decay",
-            //    Location = new Point(640, 50),
-            //    Size = new Size(110, 40),
-            //    Maximum = 99,
-            //    Minimum = 0,
-            //});
-            //this.Controls.Add(new Label()
-            //{
-            //    Location = new Point(750, 50),
-            //    Size = new Size(65, 40),
-            //    Name = "label4",
-            //    Text = "Decay",
-            //});
-
-            //foreach (Control controltb in this.Controls)
-            //{
-            //    controltb.KeyDown += Trackbars_Keydown;
-
-
-            //}
-
-
-
 
 
             this.Controls.Add(new CheckBox()
@@ -251,10 +172,6 @@ namespace VirtualSynth
         public TrackBars TrackBars  { get; set; }
         public bool On => ((CheckBox)this.Controls["OscOn"]).Checked;
 
-        public int Volume => ((TrackBar)this.Controls["Volume"]).Value;
-
-
-        //public int semitones => ((TrackBar)this.Controls["semiTones"]).Value;
         private void WaveButton_Click(object sender, EventArgs e)
         {
 
@@ -267,13 +184,7 @@ namespace VirtualSynth
             }
             button.BackColor = Color.Yellow;
         }
-        private void Trackbars_Keydown(object sender, EventArgs e)
-        {
-            //TrackBar trackBar = (TrackBar)sender;
-            
 
-        }
-        
     }
 
 }

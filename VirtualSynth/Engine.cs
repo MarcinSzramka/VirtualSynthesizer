@@ -11,7 +11,6 @@ using System.Media;
 using System.IO;
 
 
-
 namespace VirtualSynth
 {
     public partial class Engine : Form
@@ -19,44 +18,35 @@ namespace VirtualSynth
         public const int sampleRate = 44100;
         public const short bitsPerSample = 16;
         public delegate int Delegat();
-        //TODO
-       // public int Volume => ((TrackBar)this.Controls["Volume"]).Value;
-        //IEnumerable<OSC> volume = this.Controls.OfType<OSC>().Where()
-        //TODO
-        //public int semitones => ((TrackBar)this.Controls["semiTones"]).Value;
-        public int sineVolume = 100;
+        public int sineVolume = 80;
         int sinePitch = 50;
-        public int squareVolume = 100;
+        public int squareVolume = 80;
         int squarePitch = 50;
-        public int sawVolume = 100;
+        public int sawVolume = 80;
         int sawPitch = 50;
-        public int triangleVolume = 100;
+        public int triangleVolume = 80;
         int trianglePitch = 50;
-        public int noiseVolume = 100;
-        public int budXVolume = 100;
+        public int noiseVolume = 80;
+        public int budXVolume = 80;
         int budXPitch = 50;
-        public int budX2Volume = 100;
+        public int budX2Volume = 80;
         int budX2Pitch = 50;
-        public int budX3Volume = 100;
+        public int budX3Volume = 80;
         int budX3Pitch = 50;
-        public int budX4Volume = 100;
+        public int budX4Volume = 80;
         int budX4Pitch = 50;
-        public int budX5Volume = 100;
+        public int budX5Volume = 80;
         int budX5Pitch = 50;
-        public int budX6Volume = 10;
+        public int budX6Volume = 80;
         int budX6Pitch = 50;
-        public int budX7Volume = 10;
+        public int budX7Volume = 80;
         int budX7Pitch = 50;
-        public int budX8Volume = 10;
+        public int budX8Volume = 80;
         int budX8Pitch = 50;
-        public int budX9Volume = 10;
+        public int budX9Volume = 80;
         int budX9Pitch = 50;
-        public int budX10Volume = 10;
+        public int budX10Volume = 80;
         int budX10Pitch = 50;
-
-
-
-
 
         public Engine()
         {
@@ -65,21 +55,13 @@ namespace VirtualSynth
 
         private void MainInterface_KeyDown(object sender, KeyEventArgs e)
         {
-
             IEnumerable<OSC> oscillators = this.Controls.OfType<OSC>().Where(o => o.On);
-           // int vol = this.Controls.OfType<OSC>().Select(p => p.Volume).First();
             
-
             Random rnd = new Random();
             short[] wave = new short[sampleRate];
             byte[] binaryWave = new byte[sampleRate * sizeof(short)];
             float freq;
             int OscCount = oscillators.Count();
-            //if (sinePitch >= 50)
-            //{
-            //     sinePitch = sinePitch - 49;
-
-            //}
 
 
             //Keys
@@ -182,9 +164,8 @@ namespace VirtualSynth
             {
                 short tempSample;
 
-              
-                int samplesPerWaveLength = (int)(sampleRate / freq);
-                short ampStep = (short)((short.MaxValue * 2) / samplesPerWaveLength);
+                //int samplesPerWaveLength = (int)(sampleRate / freq);
+                //short ampStep = (short)((short.MaxValue * 2) / samplesPerWaveLength);
 
                 int samplesPerWaveLengthsaw = (int)(sampleRate / (freq + ((sawPitch - 50) * 10.5946309436) / 100) );
                 short ampStepsaw = (short)((short.MaxValue * 2) / samplesPerWaveLengthsaw);
@@ -206,6 +187,9 @@ namespace VirtualSynth
 
                 int samplesPerWaveLengthbudX7 = (int)(sampleRate / (freq + ((budX7Pitch - 50) * 10.5946309436) / 100));
                 short ampStepbudX7 = (short)((short.MaxValue * 2) / samplesPerWaveLengthbudX7);
+
+                int samplesPerWaveLengthbudX10 = (int)(sampleRate / (freq + ((budX10Pitch - 50) * 10.5946309436) / 100));
+                short ampStepbudX10 = (short)((short.MaxValue * 2) / samplesPerWaveLengthbudX10);
 
 
                 switch (oscillator.WaveForm)
@@ -304,7 +288,7 @@ namespace VirtualSynth
                                 tempSample += (short)(ampStepbudX2);
                                 wave[j++] += Convert.ToInt16((tempSample*budX2Volume) /(100* OscCount));
                             }
-                            for (int i = 0; i < samplesPerWaveLength / 2 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX2 / 2 && j < sampleRate; i++)
                             {
                                 tempSample += (short)(ampStepbudX2 / 2);
                                 wave[j++] += Convert.ToInt16((tempSample*budX2Volume) /(100* OscCount));
@@ -393,12 +377,12 @@ namespace VirtualSynth
 
                         for (int i = 0; i < sampleRate; i++)
                         {
-                            // (freq + ((sinePitch - 50) *10.5946309436)/100)
-                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * ((freq + ((budX5Pitch - 50) * 10.5946309436)) / 100)) / sampleRate * i)) > 0)
+                            // (freq + ((sinePitch - 50) *10.5946309436))  // ((freq + ((budX5Pitch - 50) * 10.5946309436)) / 100)
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq ) / sampleRate * i)) > 0)
                             {
-                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 4 * (freq + ((budX5Pitch - 50) * 10.5946309436)))  / sampleRate * i) * budX5Volume / (100*OscCount));
+                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 4 * (((budX5Pitch - 50) * 10.5946309436) + freq  ))  / sampleRate * i) * budX5Volume / (100*OscCount));
                             }
-                            wave[i] += Convert.ToInt16((short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX5Pitch - 50) * 10.5946309436)))  / sampleRate * i)* budX5Volume) / ( 100*OscCount));
+                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (((budX5Pitch - 50) * 10.5946309436) + freq ))  / sampleRate * i)* budX5Volume /  (100*OscCount));
                         }
                         break;
 
@@ -407,11 +391,12 @@ namespace VirtualSynth
 
                         for (int i = 0; i < sampleRate; i++)
                         {
-                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436))) / sampleRate * i)) > short.MaxValue / 2)
+                            //(freq + ((budX6Pitch - 50) * 10.5946309436))
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) > short.MaxValue / 2)
                             {
                                 wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436)))  / sampleRate * i) * budX6Volume / (100* OscCount));
                             }
-                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436))) / sampleRate * i)) < -short.MaxValue / 2)
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) < -short.MaxValue / 2)
                             {
                                 wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436))) / sampleRate * i) * budX6Volume / (100* OscCount));
                             } 
@@ -457,11 +442,12 @@ namespace VirtualSynth
 
                         for (int i = 0; i < sampleRate; i++)
                         {
+                            
                             if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) < 0)
                             {
-                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5*(Math.PI * 2 * freq) / sampleRate * i) * budX8Volume / (100 * OscCount));
+                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5*(Math.PI * 2 * (freq + ((budX8Pitch - 50) * 10.5946309436))) / sampleRate * i) * budX8Volume / (100 * OscCount));
                             }
-                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(0.5*(Math.PI * 2 * freq)  / sampleRate * i) * budX8Volume / (100* OscCount));
+                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(0.5*(Math.PI * 2 * (freq + ((budX8Pitch - 50) * 10.5946309436)))  / sampleRate * i) * budX8Volume / (100* OscCount));
                         }
                        
                         break;
@@ -471,11 +457,11 @@ namespace VirtualSynth
 
                         for (int i = 0; i < sampleRate; i++)
                         {
-                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) >= 0)
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX9Pitch - 50) * 1.05946309436))) / sampleRate * i)) >= 0)
                             {
-                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5 * (Math.PI * 2 * freq) / sampleRate * i)* (budX9Volume) /(100* OscCount));
+                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5 * (Math.PI * 2 * (freq + ((budX9Pitch - 50) * 1.05946309436))) / sampleRate * i)* (budX9Volume) /(100* OscCount));
                             }
-                            wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin(0.5 * (Math.PI * 2 * freq) / sampleRate * i) * (budX9Volume) /(100* OscCount));
+                            wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin(0.5 * (Math.PI * 2 * (freq + ((budX9Pitch - 50) * 1.05946309436))) / sampleRate * i) * (budX9Volume) /(100* OscCount));
                         }
                         
                         break;
@@ -486,49 +472,49 @@ namespace VirtualSynth
                         for (int j = 0; j < sampleRate; j++)
                         {
                             tempSample = short.MaxValue;
-                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX10 / 6 && j < sampleRate; i++)
                             {
-                                tempSample -= (short)(ampStep*3);
+                                tempSample -= (short)(ampStepbudX10*3);
                                 wave[j++] += Convert.ToInt16(tempSample *budX10Volume /(100* OscCount));
                             }
 
-                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX10 / 6 && j < sampleRate; i++)
                             {
-                                tempSample += (short)(ampStep );
+                                tempSample += (short)(ampStepbudX10);
                                 wave[j++] += Convert.ToInt16(tempSample * budX10Volume / (100 * OscCount));
                             }
                            
-                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX10 / 6 && j < sampleRate; i++)
                             {
-                                tempSample -= (short)(ampStep);
+                                tempSample -= (short)(ampStepbudX10);
                                 wave[j++] += Convert.ToInt16(tempSample * budX10Volume / (100 * OscCount));
                             }
                             
-                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX10 / 6 && j < sampleRate; i++)
                             {
-                                tempSample += (short)(ampStep *3);
+                                tempSample += (short)(ampStepbudX10 * 3);
                                 wave[j++] += Convert.ToInt16(tempSample * budX10Volume / (100 * OscCount));
                             }
 
-                            for (int i = 0; i < samplesPerWaveLength / 6 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX10 / 6 && j < sampleRate; i++)
                             {
-                                tempSample -= (short)(3 * ampStep);
+                                tempSample -= (short)(3 * ampStepbudX10);
                                 wave[j++] += Convert.ToInt16(tempSample * budX10Volume / (100 * OscCount));
                             }
 
-                            for (int i = 0; i < samplesPerWaveLength / 18 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX10 / 18 && j < sampleRate; i++)
                             {
-                                tempSample += (short)(2 * ampStep);
+                                tempSample += (short)(2 * ampStepbudX10);
                                 wave[j++] += Convert.ToInt16(tempSample * budX10Volume / (100 * OscCount));
                             }
-                            for (int i = 0; i < samplesPerWaveLength / 18 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX10 / 18 && j < sampleRate; i++)
                             {
-                                tempSample -= (short)(2 * ampStep);
+                                tempSample -= (short)(2 * ampStepbudX10);
                                 wave[j++] += Convert.ToInt16(tempSample * budX10Volume / (100 * OscCount));
                             }
-                            for (int i = 0; i < samplesPerWaveLength / 18 && j < sampleRate; i++)
+                            for (int i = 0; i < samplesPerWaveLengthbudX10 / 18 && j < sampleRate; i++)
                             {
-                                tempSample += (short)(3 * ampStep);
+                                tempSample += (short)(3 * ampStepbudX10);
                                 wave[j++] += Convert.ToInt16(tempSample * budX10Volume / (100 * OscCount));
                             }
                         }
