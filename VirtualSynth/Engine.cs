@@ -192,6 +192,8 @@ namespace VirtualSynth
                 short ampStepbudX10 = (short)((short.MaxValue * 2) / samplesPerWaveLengthbudX10);
 
 
+
+
                 switch (oscillator.WaveForm)
                 {
 
@@ -200,12 +202,9 @@ namespace VirtualSynth
 
                         for (int i = 0; i < sampleRate; i++)
                         {
-
-
-                            wave[i] += Convert.ToInt16((short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((sinePitch - 50) *10.5946309436)/100)) / sampleRate * i) * sineVolume / (100 * (OscCount) )));
-                       
-                }
-                break;
+                            wave[i] += Convert.ToInt16((short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((sinePitch - 50) *10.5946309436)/100)) / sampleRate * i) * sineVolume / (100 * (OscCount) )));          
+                        }
+                        break;
 
                     case WaveForm.Square:
                         for (int i = 0; i < sampleRate; i++)
@@ -378,11 +377,11 @@ namespace VirtualSynth
                         for (int i = 0; i < sampleRate; i++)
                         {
                             // (freq + ((sinePitch - 50) *10.5946309436))  // ((freq + ((budX5Pitch - 50) * 10.5946309436)) / 100)
-                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq ) / sampleRate * i)) > 0)
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX5Pitch - 50) * 10.5946309436) / 100)) / sampleRate * i)) > 0)
                             {
-                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 4 * (((budX5Pitch - 50) * 10.5946309436) + freq  ))  / sampleRate * i) * budX5Volume / (100*OscCount));
+                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 4 * (freq +((budX5Pitch - 50) * 10.5946309436)/100  ))  / sampleRate * i) * budX5Volume / (100*OscCount));
                             }
-                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (((budX5Pitch - 50) * 10.5946309436) + freq ))  / sampleRate * i)* budX5Volume /  (100*OscCount));
+                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (((budX5Pitch - 50) * 10.5946309436) + freq )/100)  / sampleRate * i)* budX5Volume /  (100*OscCount));
                         }
                         break;
 
@@ -394,13 +393,13 @@ namespace VirtualSynth
                             //(freq + ((budX6Pitch - 50) * 10.5946309436))
                             if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) > short.MaxValue / 2)
                             {
-                                wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436)))  / sampleRate * i) * budX6Volume / (100* OscCount));
+                                wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436))/100)  / sampleRate * i) * budX6Volume / (100* OscCount));
                             }
                             if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) < -short.MaxValue / 2)
                             {
-                                wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436))) / sampleRate * i) * budX6Volume / (100* OscCount));
+                                wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436))/100) / sampleRate * i) * budX6Volume / (100* OscCount));
                             } 
-                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436))) / sampleRate * i) * budX6Volume / (100* OscCount));
+                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX6Pitch - 50) * 10.5946309436))/100) / sampleRate * i) * budX6Volume / (100* OscCount));
                         }
                         break;
 
@@ -443,11 +442,11 @@ namespace VirtualSynth
                         for (int i = 0; i < sampleRate; i++)
                         {
                             
-                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) < 0)
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX8Pitch - 50) * 10.5946309436) / 100)) / sampleRate * i)) < 0)
                             {
-                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5*(Math.PI * 2 * (freq + ((budX8Pitch - 50) * 10.5946309436))) / sampleRate * i) * budX8Volume / (100 * OscCount));
+                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5*(Math.PI * 2 * (freq + ((budX8Pitch - 50) * 10.5946309436)/100)) / sampleRate * i) * budX8Volume / (100 * OscCount));
                             }
-                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(0.5*(Math.PI * 2 * (freq + ((budX8Pitch - 50) * 10.5946309436)))  / sampleRate * i) * budX8Volume / (100* OscCount));
+                            wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(0.5*(Math.PI * 2 * (freq + ((budX8Pitch - 50) * 10.5946309436)/100))  / sampleRate * i) * budX8Volume / (100* OscCount));
                         }
                        
                         break;
@@ -457,11 +456,11 @@ namespace VirtualSynth
 
                         for (int i = 0; i < sampleRate; i++)
                         {
-                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * (freq + ((budX9Pitch - 50) * 1.05946309436))) / sampleRate * i)) >= 0)
+                            if (Convert.ToInt16(short.MaxValue * Math.Sin((Math.PI * 2 * freq) / sampleRate * i)) >= 0)
                             {
-                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5 * (Math.PI * 2 * (freq + ((budX9Pitch - 50) * 1.05946309436))) / sampleRate * i)* (budX9Volume) /(100* OscCount));
+                                wave[i] += Convert.ToInt16(short.MaxValue * Math.Sin(1.5 * (Math.PI * 2 * (freq + ((budX9Pitch - 50) * 10.5946309436)/100)) / sampleRate * i)* (budX9Volume) /(100* OscCount));
                             }
-                            wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin(0.5 * (Math.PI * 2 * (freq + ((budX9Pitch - 50) * 1.05946309436))) / sampleRate * i) * (budX9Volume) /(100* OscCount));
+                            wave[i] -= Convert.ToInt16(short.MaxValue * Math.Sin(0.5 * (Math.PI * 2 * (freq + ((budX9Pitch - 50) * 10.5946309436)/100)) / sampleRate * i) * (budX9Volume) /(100* OscCount));
                         }
                         
                         break;
