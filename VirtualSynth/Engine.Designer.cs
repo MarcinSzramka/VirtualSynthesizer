@@ -30,6 +30,11 @@
         {
             this.SineVolume = new System.Windows.Forms.TrackBar();
             this.Mixer = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.decay = new System.Windows.Forms.TrackBar();
+            this.attack = new System.Windows.Forms.TrackBar();
             this.FMshape = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,6 +80,8 @@
             this.osc1 = new VirtualSynth.OSC();
             ((System.ComponentModel.ISupportInitialize)(this.SineVolume)).BeginInit();
             this.Mixer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.decay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX10Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX10Volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.budx9Module)).BeginInit();
@@ -124,6 +131,11 @@
             // 
             // Mixer
             // 
+            this.Mixer.Controls.Add(this.label5);
+            this.Mixer.Controls.Add(this.label4);
+            this.Mixer.Controls.Add(this.label3);
+            this.Mixer.Controls.Add(this.decay);
+            this.Mixer.Controls.Add(this.attack);
             this.Mixer.Controls.Add(this.FMshape);
             this.Mixer.Controls.Add(this.label2);
             this.Mixer.Controls.Add(this.label1);
@@ -169,6 +181,56 @@
             this.Mixer.TabStop = false;
             this.Mixer.Text = "Mixer";
             this.Mixer.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(235, 248);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 69;
+            this.label5.Text = "DECAY";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(142, 248);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 68;
+            this.label4.Text = "ATTACK";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Location = new System.Drawing.Point(6, 248);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.TabIndex = 67;
+            this.label3.Text = "MASTER VOLUME";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
+            // 
+            // decay
+            // 
+            this.decay.Location = new System.Drawing.Point(215, 212);
+            this.decay.Maximum = 100;
+            this.decay.Name = "decay";
+            this.decay.Size = new System.Drawing.Size(86, 45);
+            this.decay.TabIndex = 66;
+            this.decay.Value = 100;
+            this.decay.Scroll += new System.EventHandler(this.Decay_Scroll);
+            // 
+            // attack
+            // 
+            this.attack.Location = new System.Drawing.Point(123, 212);
+            this.attack.Maximum = 100;
+            this.attack.Name = "attack";
+            this.attack.Size = new System.Drawing.Size(86, 45);
+            this.attack.TabIndex = 65;
+            this.attack.Value = 100;
+            this.attack.Scroll += new System.EventHandler(this.Attack_Scroll);
             // 
             // FMshape
             // 
@@ -502,12 +564,12 @@
             // 
             // sineAttack
             // 
-            this.sineAttack.Location = new System.Drawing.Point(6, 163);
+            this.sineAttack.Location = new System.Drawing.Point(38, 155);
             this.sineAttack.Maximum = 100;
             this.sineAttack.Minimum = 1;
             this.sineAttack.Name = "sineAttack";
             this.sineAttack.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.sineAttack.Size = new System.Drawing.Size(45, 72);
+            this.sineAttack.Size = new System.Drawing.Size(45, 86);
             this.sineAttack.TabIndex = 7;
             this.sineAttack.Value = 80;
             this.sineAttack.Scroll += new System.EventHandler(this.sineAttack_Scroll);
@@ -601,6 +663,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.SineVolume)).EndInit();
             this.Mixer.ResumeLayout(false);
             this.Mixer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.decay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.attack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX10Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX10Volume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.budx9Module)).EndInit();
@@ -689,6 +753,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label FMshape;
+        private System.Windows.Forms.TrackBar decay;
+        private System.Windows.Forms.TrackBar attack;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 

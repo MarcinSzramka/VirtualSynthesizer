@@ -52,6 +52,8 @@ namespace VirtualSynth
         public int budx6Modul = 0;
         public int budx8Modul = 0;
         public int budx9Modul = 0;
+        public int atk = 100;
+        public int dcy = 100;
 
 
         public Engine()
@@ -568,23 +570,27 @@ namespace VirtualSynth
                         break;
 
                 }
-                //TODO możliwość zrobienia obwiedni na masterze
-               // int attStep = (short.MaxValue * sineAtt) / 50 * (sampleRate / 2);
+
                 for (int j = 0; j < (sampleRate); j++)
                 {
                     wave[j] = Convert.ToInt16(Convert.ToInt32(wave[j] * sineAtt) / 100);
                 }
 
-                //for (int j = (sampleRate / 2); j < sampleRate; j++)
-                //{
 
-                //}
+                if (atk >= 50)
+                {
+                    for (int j = 0; j < sampleRate ; j++)
+                    {
 
-                //wave[]
+                        wave[j] = Convert.ToInt16(Convert.ToInt32((wave[j] * j) / sampleRate));
+
+                    }
+                }
 
 
                 Buffer.BlockCopy(wave, 0, binaryWave, 0, wave.Length * sizeof(short));
             }
+
             // wave format standard
             short blockAlign = bitsPerSample / 8;
             int subChunkTwoSize = sampleRate * blockAlign;
@@ -605,14 +611,9 @@ namespace VirtualSynth
             wr.Write(binaryWave);
             f.Position = 0;
 
-            // wave player
-            //new SoundPlayer(f).Play();
-            //Task.Delay(5000);
-
-            //f.Position = 0;
-            //new SoundPlayer(f).Play();
-            //f.Position = 0;
+            
             new SoundPlayer(f).Play();
+
         }
 
         private void MainInterface_Load(object sender, EventArgs e)
@@ -775,6 +776,15 @@ namespace VirtualSynth
             budx9Modul = budx9Module.Value;
         }
 
+        private void Attack_Scroll(object sender, EventArgs e)
+        {
+            atk = (short)attack.Value;
+        }
+
+        private void Decay_Scroll(object sender, EventArgs e)
+        {
+            dcy = (short)decay.Value;
+        }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -787,6 +797,16 @@ namespace VirtualSynth
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
         {
 
         }
