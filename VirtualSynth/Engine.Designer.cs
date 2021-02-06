@@ -30,63 +30,42 @@
         {
             this.SineVolume = new System.Windows.Forms.TrackBar();
             this.Mixer = new System.Windows.Forms.GroupBox();
+            this.FMshape = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.trackBar58 = new System.Windows.Forms.TrackBar();
-            this.trackBar57 = new System.Windows.Forms.TrackBar();
             this.BudX10Pitch = new System.Windows.Forms.TrackBar();
             this.BudX10Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar54 = new System.Windows.Forms.TrackBar();
-            this.trackBar53 = new System.Windows.Forms.TrackBar();
+            this.budx9Module = new System.Windows.Forms.TrackBar();
             this.BudX9Pitch = new System.Windows.Forms.TrackBar();
             this.BudX9Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar50 = new System.Windows.Forms.TrackBar();
-            this.trackBar49 = new System.Windows.Forms.TrackBar();
+            this.budx8Module = new System.Windows.Forms.TrackBar();
             this.BudX8Pitch = new System.Windows.Forms.TrackBar();
             this.BudX8Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar46 = new System.Windows.Forms.TrackBar();
-            this.trackBar45 = new System.Windows.Forms.TrackBar();
             this.BudX7Pitch = new System.Windows.Forms.TrackBar();
             this.BudX7Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar42 = new System.Windows.Forms.TrackBar();
-            this.trackBar41 = new System.Windows.Forms.TrackBar();
+            this.budx6Module = new System.Windows.Forms.TrackBar();
             this.BudX6Pitch = new System.Windows.Forms.TrackBar();
             this.BudX6Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar38 = new System.Windows.Forms.TrackBar();
-            this.trackBar37 = new System.Windows.Forms.TrackBar();
+            this.budx5Module = new System.Windows.Forms.TrackBar();
             this.BudX5Pitch = new System.Windows.Forms.TrackBar();
             this.BudX5Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar34 = new System.Windows.Forms.TrackBar();
-            this.trackBar33 = new System.Windows.Forms.TrackBar();
             this.BudX4Pitch = new System.Windows.Forms.TrackBar();
             this.BudX4Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar30 = new System.Windows.Forms.TrackBar();
-            this.trackBar29 = new System.Windows.Forms.TrackBar();
             this.BudX31Pitch = new System.Windows.Forms.TrackBar();
             this.BudX3Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar26 = new System.Windows.Forms.TrackBar();
-            this.trackBar25 = new System.Windows.Forms.TrackBar();
             this.BudX2Pitch = new System.Windows.Forms.TrackBar();
             this.BudX2Volume = new System.Windows.Forms.TrackBar();
-            this.trackBar22 = new System.Windows.Forms.TrackBar();
-            this.trackBar21 = new System.Windows.Forms.TrackBar();
             this.BudXPitch = new System.Windows.Forms.TrackBar();
             this.BudXVolume = new System.Windows.Forms.TrackBar();
             this.NoiseVolume = new System.Windows.Forms.TrackBar();
-            this.trackBar17 = new System.Windows.Forms.TrackBar();
-            this.trackBar16 = new System.Windows.Forms.TrackBar();
             this.TrianglePitch1 = new System.Windows.Forms.TrackBar();
             this.TriangleVolume = new System.Windows.Forms.TrackBar();
-            this.trackBar13 = new System.Windows.Forms.TrackBar();
-            this.trackBar12 = new System.Windows.Forms.TrackBar();
             this.SawPitch1 = new System.Windows.Forms.TrackBar();
             this.SawVolume = new System.Windows.Forms.TrackBar();
-            this.trackBar9 = new System.Windows.Forms.TrackBar();
-            this.trackBar8 = new System.Windows.Forms.TrackBar();
             this.SqrePitch = new System.Windows.Forms.TrackBar();
             this.SquareVolume = new System.Windows.Forms.TrackBar();
-            this.trackBar5 = new System.Windows.Forms.TrackBar();
-            this.trackBar4 = new System.Windows.Forms.TrackBar();
+            this.sineMod = new System.Windows.Forms.TrackBar();
+            this.sineAttack = new System.Windows.Forms.TrackBar();
             this.SinePitch = new System.Windows.Forms.TrackBar();
             this.osc5 = new VirtualSynth.OSC();
             this.osc4 = new VirtualSynth.OSC();
@@ -96,61 +75,39 @@
             this.osc1 = new VirtualSynth.OSC();
             ((System.ComponentModel.ISupportInitialize)(this.SineVolume)).BeginInit();
             this.Mixer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar58)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar57)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX10Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX10Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar54)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar53)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budx9Module)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX9Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX9Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar50)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budx8Module)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX8Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX8Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar46)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX7Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX7Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budx6Module)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX6Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX6Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar38)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar37)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budx5Module)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX5Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX5Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar33)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX4Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX4Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX31Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX3Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX2Pitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX2Volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudXPitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudXVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoiseVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrianglePitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TriangleVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SawPitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SawVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SqrePitch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SquareVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sineMod)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sineAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SinePitch)).BeginInit();
             this.osc4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
@@ -167,63 +124,42 @@
             // 
             // Mixer
             // 
+            this.Mixer.Controls.Add(this.FMshape);
             this.Mixer.Controls.Add(this.label2);
             this.Mixer.Controls.Add(this.label1);
-            this.Mixer.Controls.Add(this.trackBar58);
-            this.Mixer.Controls.Add(this.trackBar57);
             this.Mixer.Controls.Add(this.BudX10Pitch);
             this.Mixer.Controls.Add(this.BudX10Volume);
-            this.Mixer.Controls.Add(this.trackBar54);
-            this.Mixer.Controls.Add(this.trackBar53);
+            this.Mixer.Controls.Add(this.budx9Module);
             this.Mixer.Controls.Add(this.BudX9Pitch);
             this.Mixer.Controls.Add(this.BudX9Volume);
-            this.Mixer.Controls.Add(this.trackBar50);
-            this.Mixer.Controls.Add(this.trackBar49);
+            this.Mixer.Controls.Add(this.budx8Module);
             this.Mixer.Controls.Add(this.BudX8Pitch);
             this.Mixer.Controls.Add(this.BudX8Volume);
-            this.Mixer.Controls.Add(this.trackBar46);
-            this.Mixer.Controls.Add(this.trackBar45);
             this.Mixer.Controls.Add(this.BudX7Pitch);
             this.Mixer.Controls.Add(this.BudX7Volume);
-            this.Mixer.Controls.Add(this.trackBar42);
-            this.Mixer.Controls.Add(this.trackBar41);
+            this.Mixer.Controls.Add(this.budx6Module);
             this.Mixer.Controls.Add(this.BudX6Pitch);
             this.Mixer.Controls.Add(this.BudX6Volume);
-            this.Mixer.Controls.Add(this.trackBar38);
-            this.Mixer.Controls.Add(this.trackBar37);
+            this.Mixer.Controls.Add(this.budx5Module);
             this.Mixer.Controls.Add(this.BudX5Pitch);
             this.Mixer.Controls.Add(this.BudX5Volume);
-            this.Mixer.Controls.Add(this.trackBar34);
-            this.Mixer.Controls.Add(this.trackBar33);
             this.Mixer.Controls.Add(this.BudX4Pitch);
             this.Mixer.Controls.Add(this.BudX4Volume);
-            this.Mixer.Controls.Add(this.trackBar30);
-            this.Mixer.Controls.Add(this.trackBar29);
             this.Mixer.Controls.Add(this.BudX31Pitch);
             this.Mixer.Controls.Add(this.BudX3Volume);
-            this.Mixer.Controls.Add(this.trackBar26);
-            this.Mixer.Controls.Add(this.trackBar25);
             this.Mixer.Controls.Add(this.BudX2Pitch);
             this.Mixer.Controls.Add(this.BudX2Volume);
-            this.Mixer.Controls.Add(this.trackBar22);
-            this.Mixer.Controls.Add(this.trackBar21);
             this.Mixer.Controls.Add(this.BudXPitch);
             this.Mixer.Controls.Add(this.BudXVolume);
             this.Mixer.Controls.Add(this.NoiseVolume);
-            this.Mixer.Controls.Add(this.trackBar17);
-            this.Mixer.Controls.Add(this.trackBar16);
             this.Mixer.Controls.Add(this.TrianglePitch1);
             this.Mixer.Controls.Add(this.TriangleVolume);
-            this.Mixer.Controls.Add(this.trackBar13);
-            this.Mixer.Controls.Add(this.trackBar12);
             this.Mixer.Controls.Add(this.SawPitch1);
             this.Mixer.Controls.Add(this.SawVolume);
-            this.Mixer.Controls.Add(this.trackBar9);
-            this.Mixer.Controls.Add(this.trackBar8);
             this.Mixer.Controls.Add(this.SqrePitch);
             this.Mixer.Controls.Add(this.SquareVolume);
-            this.Mixer.Controls.Add(this.trackBar5);
-            this.Mixer.Controls.Add(this.trackBar4);
+            this.Mixer.Controls.Add(this.sineMod);
+            this.Mixer.Controls.Add(this.sineAttack);
             this.Mixer.Controls.Add(this.SinePitch);
             this.Mixer.Controls.Add(this.SineVolume);
             this.Mixer.Location = new System.Drawing.Point(12, 276);
@@ -233,6 +169,16 @@
             this.Mixer.TabStop = false;
             this.Mixer.Text = "Mixer";
             this.Mixer.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // FMshape
+            // 
+            this.FMshape.AutoSize = true;
+            this.FMshape.Location = new System.Drawing.Point(38, 112);
+            this.FMshape.Name = "FMshape";
+            this.FMshape.Size = new System.Drawing.Size(62, 13);
+            this.FMshape.TabIndex = 64;
+            this.FMshape.Text = "FM shaping";
+            this.FMshape.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -253,20 +199,6 @@
             this.label1.TabIndex = 62;
             this.label1.Text = "Volume:";
             // 
-            // trackBar58
-            // 
-            this.trackBar58.Location = new System.Drawing.Point(940, 163);
-            this.trackBar58.Name = "trackBar58";
-            this.trackBar58.Size = new System.Drawing.Size(67, 45);
-            this.trackBar58.TabIndex = 61;
-            // 
-            // trackBar57
-            // 
-            this.trackBar57.Location = new System.Drawing.Point(940, 112);
-            this.trackBar57.Name = "trackBar57";
-            this.trackBar57.Size = new System.Drawing.Size(67, 45);
-            this.trackBar57.TabIndex = 60;
-            // 
             // BudX10Pitch
             // 
             this.BudX10Pitch.Location = new System.Drawing.Point(940, 61);
@@ -286,19 +218,14 @@
             this.BudX10Volume.TabIndex = 58;
             this.BudX10Volume.Scroll += new System.EventHandler(this.BudX10Volume_Scroll);
             // 
-            // trackBar54
+            // budx9Module
             // 
-            this.trackBar54.Location = new System.Drawing.Point(874, 163);
-            this.trackBar54.Name = "trackBar54";
-            this.trackBar54.Size = new System.Drawing.Size(72, 45);
-            this.trackBar54.TabIndex = 57;
-            // 
-            // trackBar53
-            // 
-            this.trackBar53.Location = new System.Drawing.Point(874, 112);
-            this.trackBar53.Name = "trackBar53";
-            this.trackBar53.Size = new System.Drawing.Size(72, 45);
-            this.trackBar53.TabIndex = 56;
+            this.budx9Module.Location = new System.Drawing.Point(874, 112);
+            this.budx9Module.Maximum = 50;
+            this.budx9Module.Name = "budx9Module";
+            this.budx9Module.Size = new System.Drawing.Size(72, 45);
+            this.budx9Module.TabIndex = 56;
+            this.budx9Module.Scroll += new System.EventHandler(this.budx9Mod_Scroll);
             // 
             // BudX9Pitch
             // 
@@ -319,19 +246,14 @@
             this.BudX9Volume.TabIndex = 54;
             this.BudX9Volume.Scroll += new System.EventHandler(this.BudX9Volume_Scroll);
             // 
-            // trackBar50
+            // budx8Module
             // 
-            this.trackBar50.Location = new System.Drawing.Point(814, 163);
-            this.trackBar50.Name = "trackBar50";
-            this.trackBar50.Size = new System.Drawing.Size(72, 45);
-            this.trackBar50.TabIndex = 53;
-            // 
-            // trackBar49
-            // 
-            this.trackBar49.Location = new System.Drawing.Point(814, 112);
-            this.trackBar49.Name = "trackBar49";
-            this.trackBar49.Size = new System.Drawing.Size(72, 45);
-            this.trackBar49.TabIndex = 52;
+            this.budx8Module.Location = new System.Drawing.Point(814, 112);
+            this.budx8Module.Maximum = 50;
+            this.budx8Module.Name = "budx8Module";
+            this.budx8Module.Size = new System.Drawing.Size(72, 45);
+            this.budx8Module.TabIndex = 52;
+            this.budx8Module.Scroll += new System.EventHandler(this.budx8Mod_Scroll);
             // 
             // BudX8Pitch
             // 
@@ -352,20 +274,6 @@
             this.BudX8Volume.TabIndex = 50;
             this.BudX8Volume.Scroll += new System.EventHandler(this.BudX8Volume_Scroll);
             // 
-            // trackBar46
-            // 
-            this.trackBar46.Location = new System.Drawing.Point(754, 163);
-            this.trackBar46.Name = "trackBar46";
-            this.trackBar46.Size = new System.Drawing.Size(72, 45);
-            this.trackBar46.TabIndex = 49;
-            // 
-            // trackBar45
-            // 
-            this.trackBar45.Location = new System.Drawing.Point(754, 112);
-            this.trackBar45.Name = "trackBar45";
-            this.trackBar45.Size = new System.Drawing.Size(72, 45);
-            this.trackBar45.TabIndex = 48;
-            // 
             // BudX7Pitch
             // 
             this.BudX7Pitch.Location = new System.Drawing.Point(754, 61);
@@ -385,19 +293,14 @@
             this.BudX7Volume.TabIndex = 46;
             this.BudX7Volume.Scroll += new System.EventHandler(this.BudX7Volume_Scroll);
             // 
-            // trackBar42
+            // budx6Module
             // 
-            this.trackBar42.Location = new System.Drawing.Point(694, 163);
-            this.trackBar42.Name = "trackBar42";
-            this.trackBar42.Size = new System.Drawing.Size(72, 45);
-            this.trackBar42.TabIndex = 45;
-            // 
-            // trackBar41
-            // 
-            this.trackBar41.Location = new System.Drawing.Point(694, 112);
-            this.trackBar41.Name = "trackBar41";
-            this.trackBar41.Size = new System.Drawing.Size(72, 45);
-            this.trackBar41.TabIndex = 44;
+            this.budx6Module.Location = new System.Drawing.Point(694, 112);
+            this.budx6Module.Maximum = 50;
+            this.budx6Module.Name = "budx6Module";
+            this.budx6Module.Size = new System.Drawing.Size(72, 45);
+            this.budx6Module.TabIndex = 44;
+            this.budx6Module.Scroll += new System.EventHandler(this.budx6Mod_Scroll);
             // 
             // BudX6Pitch
             // 
@@ -418,19 +321,14 @@
             this.BudX6Volume.TabIndex = 42;
             this.BudX6Volume.Scroll += new System.EventHandler(this.BudX6Volume_Scroll);
             // 
-            // trackBar38
+            // budx5Module
             // 
-            this.trackBar38.Location = new System.Drawing.Point(634, 163);
-            this.trackBar38.Name = "trackBar38";
-            this.trackBar38.Size = new System.Drawing.Size(72, 45);
-            this.trackBar38.TabIndex = 41;
-            // 
-            // trackBar37
-            // 
-            this.trackBar37.Location = new System.Drawing.Point(634, 112);
-            this.trackBar37.Name = "trackBar37";
-            this.trackBar37.Size = new System.Drawing.Size(72, 45);
-            this.trackBar37.TabIndex = 40;
+            this.budx5Module.Location = new System.Drawing.Point(634, 112);
+            this.budx5Module.Maximum = 50;
+            this.budx5Module.Name = "budx5Module";
+            this.budx5Module.Size = new System.Drawing.Size(72, 45);
+            this.budx5Module.TabIndex = 40;
+            this.budx5Module.Scroll += new System.EventHandler(this.budx5Mod_Scroll);
             // 
             // BudX5Pitch
             // 
@@ -451,20 +349,6 @@
             this.BudX5Volume.TabIndex = 38;
             this.BudX5Volume.Scroll += new System.EventHandler(this.BudX5Volume_Scroll);
             // 
-            // trackBar34
-            // 
-            this.trackBar34.Location = new System.Drawing.Point(575, 163);
-            this.trackBar34.Name = "trackBar34";
-            this.trackBar34.Size = new System.Drawing.Size(72, 45);
-            this.trackBar34.TabIndex = 37;
-            // 
-            // trackBar33
-            // 
-            this.trackBar33.Location = new System.Drawing.Point(575, 112);
-            this.trackBar33.Name = "trackBar33";
-            this.trackBar33.Size = new System.Drawing.Size(72, 45);
-            this.trackBar33.TabIndex = 36;
-            // 
             // BudX4Pitch
             // 
             this.BudX4Pitch.Location = new System.Drawing.Point(575, 61);
@@ -483,20 +367,6 @@
             this.BudX4Volume.Size = new System.Drawing.Size(72, 45);
             this.BudX4Volume.TabIndex = 34;
             this.BudX4Volume.Scroll += new System.EventHandler(this.BudX4Volume_Scroll);
-            // 
-            // trackBar30
-            // 
-            this.trackBar30.Location = new System.Drawing.Point(517, 163);
-            this.trackBar30.Name = "trackBar30";
-            this.trackBar30.Size = new System.Drawing.Size(71, 45);
-            this.trackBar30.TabIndex = 33;
-            // 
-            // trackBar29
-            // 
-            this.trackBar29.Location = new System.Drawing.Point(517, 112);
-            this.trackBar29.Name = "trackBar29";
-            this.trackBar29.Size = new System.Drawing.Size(71, 45);
-            this.trackBar29.TabIndex = 32;
             // 
             // BudX31Pitch
             // 
@@ -517,20 +387,6 @@
             this.BudX3Volume.TabIndex = 30;
             this.BudX3Volume.Scroll += new System.EventHandler(this.BudX3Volume_Scroll);
             // 
-            // trackBar26
-            // 
-            this.trackBar26.Location = new System.Drawing.Point(458, 163);
-            this.trackBar26.Name = "trackBar26";
-            this.trackBar26.Size = new System.Drawing.Size(72, 45);
-            this.trackBar26.TabIndex = 29;
-            // 
-            // trackBar25
-            // 
-            this.trackBar25.Location = new System.Drawing.Point(458, 112);
-            this.trackBar25.Name = "trackBar25";
-            this.trackBar25.Size = new System.Drawing.Size(72, 45);
-            this.trackBar25.TabIndex = 28;
-            // 
             // BudX2Pitch
             // 
             this.BudX2Pitch.Location = new System.Drawing.Point(458, 61);
@@ -549,20 +405,6 @@
             this.BudX2Volume.Size = new System.Drawing.Size(72, 45);
             this.BudX2Volume.TabIndex = 26;
             this.BudX2Volume.Scroll += new System.EventHandler(this.BudX2Volume_Scroll);
-            // 
-            // trackBar22
-            // 
-            this.trackBar22.Location = new System.Drawing.Point(399, 163);
-            this.trackBar22.Name = "trackBar22";
-            this.trackBar22.Size = new System.Drawing.Size(72, 45);
-            this.trackBar22.TabIndex = 25;
-            // 
-            // trackBar21
-            // 
-            this.trackBar21.Location = new System.Drawing.Point(399, 112);
-            this.trackBar21.Name = "trackBar21";
-            this.trackBar21.Size = new System.Drawing.Size(72, 45);
-            this.trackBar21.TabIndex = 24;
             // 
             // BudXPitch
             // 
@@ -592,20 +434,6 @@
             this.NoiseVolume.TabIndex = 21;
             this.NoiseVolume.Scroll += new System.EventHandler(this.noiseVolume_Scroll);
             // 
-            // trackBar17
-            // 
-            this.trackBar17.Location = new System.Drawing.Point(275, 163);
-            this.trackBar17.Name = "trackBar17";
-            this.trackBar17.Size = new System.Drawing.Size(72, 45);
-            this.trackBar17.TabIndex = 20;
-            // 
-            // trackBar16
-            // 
-            this.trackBar16.Location = new System.Drawing.Point(275, 112);
-            this.trackBar16.Name = "trackBar16";
-            this.trackBar16.Size = new System.Drawing.Size(72, 45);
-            this.trackBar16.TabIndex = 19;
-            // 
             // TrianglePitch1
             // 
             this.TrianglePitch1.Location = new System.Drawing.Point(275, 61);
@@ -624,20 +452,6 @@
             this.TriangleVolume.Size = new System.Drawing.Size(72, 45);
             this.TriangleVolume.TabIndex = 17;
             this.TriangleVolume.Scroll += new System.EventHandler(this.triangleVolume_Scroll);
-            // 
-            // trackBar13
-            // 
-            this.trackBar13.Location = new System.Drawing.Point(215, 163);
-            this.trackBar13.Name = "trackBar13";
-            this.trackBar13.Size = new System.Drawing.Size(73, 45);
-            this.trackBar13.TabIndex = 16;
-            // 
-            // trackBar12
-            // 
-            this.trackBar12.Location = new System.Drawing.Point(215, 112);
-            this.trackBar12.Name = "trackBar12";
-            this.trackBar12.Size = new System.Drawing.Size(73, 45);
-            this.trackBar12.TabIndex = 15;
             // 
             // SawPitch1
             // 
@@ -658,20 +472,6 @@
             this.SawVolume.TabIndex = 13;
             this.SawVolume.Scroll += new System.EventHandler(this.sawVolume_Scroll);
             // 
-            // trackBar9
-            // 
-            this.trackBar9.Location = new System.Drawing.Point(154, 163);
-            this.trackBar9.Name = "trackBar9";
-            this.trackBar9.Size = new System.Drawing.Size(72, 45);
-            this.trackBar9.TabIndex = 12;
-            // 
-            // trackBar8
-            // 
-            this.trackBar8.Location = new System.Drawing.Point(154, 112);
-            this.trackBar8.Name = "trackBar8";
-            this.trackBar8.Size = new System.Drawing.Size(72, 45);
-            this.trackBar8.TabIndex = 11;
-            // 
             // SqrePitch
             // 
             this.SqrePitch.Location = new System.Drawing.Point(154, 61);
@@ -691,19 +491,26 @@
             this.SquareVolume.TabIndex = 9;
             this.SquareVolume.Scroll += new System.EventHandler(this.squareVolume_Scroll);
             // 
-            // trackBar5
+            // sineMod
             // 
-            this.trackBar5.Location = new System.Drawing.Point(94, 163);
-            this.trackBar5.Name = "trackBar5";
-            this.trackBar5.Size = new System.Drawing.Size(72, 45);
-            this.trackBar5.TabIndex = 8;
+            this.sineMod.Location = new System.Drawing.Point(97, 112);
+            this.sineMod.Maximum = 50;
+            this.sineMod.Name = "sineMod";
+            this.sineMod.Size = new System.Drawing.Size(72, 45);
+            this.sineMod.TabIndex = 8;
+            this.sineMod.Scroll += new System.EventHandler(this.sineMod_Scroll);
             // 
-            // trackBar4
+            // sineAttack
             // 
-            this.trackBar4.Location = new System.Drawing.Point(94, 112);
-            this.trackBar4.Name = "trackBar4";
-            this.trackBar4.Size = new System.Drawing.Size(72, 45);
-            this.trackBar4.TabIndex = 7;
+            this.sineAttack.Location = new System.Drawing.Point(6, 163);
+            this.sineAttack.Maximum = 100;
+            this.sineAttack.Minimum = 1;
+            this.sineAttack.Name = "sineAttack";
+            this.sineAttack.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.sineAttack.Size = new System.Drawing.Size(45, 72);
+            this.sineAttack.TabIndex = 7;
+            this.sineAttack.Value = 80;
+            this.sineAttack.Scroll += new System.EventHandler(this.sineAttack_Scroll);
             // 
             // SinePitch
             // 
@@ -794,61 +601,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.SineVolume)).EndInit();
             this.Mixer.ResumeLayout(false);
             this.Mixer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar58)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar57)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX10Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX10Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar54)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar53)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budx9Module)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX9Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX9Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budx8Module)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX8Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX8Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar46)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX7Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX7Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budx6Module)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX6Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX6Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar38)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar37)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.budx5Module)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX5Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX5Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar33)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX4Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX4Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX31Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX3Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX2Pitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudX2Volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudXPitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BudXVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoiseVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrianglePitch1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TriangleVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SawPitch1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SawVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SqrePitch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SquareVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sineMod)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sineAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SinePitch)).EndInit();
             this.osc4.ResumeLayout(false);
             this.osc4.PerformLayout();
@@ -867,64 +652,43 @@
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.GroupBox Mixer;
         private System.Windows.Forms.TrackBar SquareVolume;
-        private System.Windows.Forms.TrackBar trackBar5;
-        private System.Windows.Forms.TrackBar trackBar4;
+        private System.Windows.Forms.TrackBar sineMod;
+        private System.Windows.Forms.TrackBar sineAttack;
         private System.Windows.Forms.TrackBar SinePitch;
-        private System.Windows.Forms.TrackBar trackBar58;
-        private System.Windows.Forms.TrackBar trackBar57;
         private System.Windows.Forms.TrackBar BudX10Pitch;
         private System.Windows.Forms.TrackBar BudX10Volume;
-        private System.Windows.Forms.TrackBar trackBar54;
-        private System.Windows.Forms.TrackBar trackBar53;
+        private System.Windows.Forms.TrackBar budx9Module;
         private System.Windows.Forms.TrackBar BudX9Pitch;
         private System.Windows.Forms.TrackBar BudX9Volume;
-        private System.Windows.Forms.TrackBar trackBar50;
-        private System.Windows.Forms.TrackBar trackBar49;
+        private System.Windows.Forms.TrackBar budx8Module;
         private System.Windows.Forms.TrackBar BudX8Pitch;
         private System.Windows.Forms.TrackBar BudX8Volume;
-        private System.Windows.Forms.TrackBar trackBar46;
-        private System.Windows.Forms.TrackBar trackBar45;
         private System.Windows.Forms.TrackBar BudX7Pitch;
         private System.Windows.Forms.TrackBar BudX7Volume;
-        private System.Windows.Forms.TrackBar trackBar42;
-        private System.Windows.Forms.TrackBar trackBar41;
+        private System.Windows.Forms.TrackBar budx6Module;
         private System.Windows.Forms.TrackBar BudX6Pitch;
         private System.Windows.Forms.TrackBar BudX6Volume;
-        private System.Windows.Forms.TrackBar trackBar38;
-        private System.Windows.Forms.TrackBar trackBar37;
+        private System.Windows.Forms.TrackBar budx5Module;
         private System.Windows.Forms.TrackBar BudX5Pitch;
         private System.Windows.Forms.TrackBar BudX5Volume;
-        private System.Windows.Forms.TrackBar trackBar34;
-        private System.Windows.Forms.TrackBar trackBar33;
         private System.Windows.Forms.TrackBar BudX4Pitch;
         private System.Windows.Forms.TrackBar BudX4Volume;
-        private System.Windows.Forms.TrackBar trackBar30;
-        private System.Windows.Forms.TrackBar trackBar29;
         private System.Windows.Forms.TrackBar BudX31Pitch;
         private System.Windows.Forms.TrackBar BudX3Volume;
-        private System.Windows.Forms.TrackBar trackBar26;
-        private System.Windows.Forms.TrackBar trackBar25;
         private System.Windows.Forms.TrackBar BudX2Pitch;
         private System.Windows.Forms.TrackBar BudX2Volume;
-        private System.Windows.Forms.TrackBar trackBar22;
-        private System.Windows.Forms.TrackBar trackBar21;
         private System.Windows.Forms.TrackBar BudXPitch;
         private System.Windows.Forms.TrackBar BudXVolume;
         private System.Windows.Forms.TrackBar NoiseVolume;
-        private System.Windows.Forms.TrackBar trackBar17;
-        private System.Windows.Forms.TrackBar trackBar16;
         private System.Windows.Forms.TrackBar TrianglePitch1;
         private System.Windows.Forms.TrackBar TriangleVolume;
-        private System.Windows.Forms.TrackBar trackBar13;
-        private System.Windows.Forms.TrackBar trackBar12;
         private System.Windows.Forms.TrackBar SawPitch1;
         private System.Windows.Forms.TrackBar SawVolume;
-        private System.Windows.Forms.TrackBar trackBar9;
-        private System.Windows.Forms.TrackBar trackBar8;
         private System.Windows.Forms.TrackBar SqrePitch;
         private System.Windows.Forms.TrackBar SineVolume;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label FMshape;
     }
 }
 
